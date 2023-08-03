@@ -1,5 +1,5 @@
 <script>
-  import { T, extend, useThrelte, useRender, useLoader } from '@threlte/core'
+  import { T, extend, useThrelte, useRender, useFrame } from '@threlte/core'
   import { OrbitControls, useTexture, Environment } from '@threlte/extras'
   import { EffectComposer, EffectPass, RenderPass, SMAAEffect, SMAAPreset, BloomEffect, KernelSize } from 'postprocessing'
   import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry'
@@ -57,20 +57,22 @@
 {/await}
 
 <Model
-  position={[0, 0, -1]}
-  rotation={[Math.PI/2, 0, 0]}
-  scale={3}
+  position={[-1, 0, -1]}
+  rotation={[Math.PI/2, 0.2, 0]}
+  scale={5}
 />
 
 <T.Mesh
-  rotation={[0, 0, 0]}>
+  rotation={[0.3, 0.4, 0]}>
   <T.RoundedBoxGeometry
     args={[1, 1, 1, 7, 0.1]}/>
+  <!-- <T.IcosahedronGeometry
+    args={[1, 0]}/> -->
   <T.MeshPhysicalMaterial
     metalness={0}
     roughness={0.1}
     transmission={1}
-    thickness={3}/>
+    thickness={10}/>
 </T.Mesh>
 
 <T.DirectionalLight
