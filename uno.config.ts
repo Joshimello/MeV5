@@ -17,6 +17,7 @@ export default defineConfig({
       provider: 'google',
       fonts: {
         sans: 'Space Grotesk',
+        mono: 'Major Mono Display',
         bars: 'Libre Barcode 39'
       },
     }),

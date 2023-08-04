@@ -70,7 +70,7 @@
     args={[1, 0]}/> -->
   <T.MeshPhysicalMaterial
     metalness={0}
-    roughness={0.1}
+    roughness={0}
     transmission={1}
     thickness={10}/>
 </T.Mesh>
