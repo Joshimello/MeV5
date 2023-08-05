@@ -3,9 +3,9 @@
   let open = false
 
   const links = [
-    {t: '01 landing', l: '/'}, 
-    {t: '02 about', l: '/'}, 
-    {t: '03 projects', l: '/'}
+    {t: '01 landing', l: '#01'}, 
+    {t: '02 about', l: '#02'}, 
+    {t: '03 projects', l: '#03'}
   ]
 
   const socials = [
@@ -56,7 +56,7 @@
     <div class="flex flex-col gap-3 flex-1 justify-center pt-16">
       <div class="flex flex-col gap-8 w-max">
         {#each links as {t, l}}
-          <a class="text-3xl text-white font-mono b-b-1 b-b-solid b-transparent transition duration-200 cursor-pointer hover:b-white decoration-none" href={l}>
+          <a class="text-3xl text-white font-mono b-b-1 b-b-solid b-transparent transition duration-200 cursor-pointer hover:b-white decoration-none" href={l} on:click={()=>{open = false}}>
             {t}
           </a>
         {/each}

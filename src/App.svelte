@@ -18,17 +18,20 @@
       </span>
     </div>
   </div>
+  <div class="absolute -bottom-3 right-16 p-4 rounded-full bg-white shadow-xl">
+    <div class="i-ph-mouse-simple text-3xl" />
+  </div>
 </div>
 
-<div class="h-100vh w-full p-4 z-10">
+<div class="h-100vh w-full p-4">
   <div class="h-full w-full overflow-hidden rounded-3xl"
     style={bg('#87ceeb', '#667ad9', '#b562e8', '#d1b1ff')}>
-    <Canvas rendererParameters={{ alpha: true }}>
+    <Canvas rendererParameters={{ antialias: false, stencil: false, depth: false }}>
       <Scene/>
     </Canvas>
   </div>
 </div>
 
-<style>
-
-</style>
+<div class="h-100vh">
+  
+</div>
