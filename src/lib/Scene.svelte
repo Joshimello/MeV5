@@ -27,7 +27,9 @@
   } from 'three/addons/geometries/RoundedBoxGeometry.js'
   extend({ RoundedBoxGeometry })
 
-  import Model from './Model.svelte'
+  import Cinnamonroll from './models/Cinnamonroll.svelte'
+  import Flour from './models/Flour.svelte'
+  import Sugar from './models/Sugar.svelte'
 
   const { scene, renderer, camera } = useThrelte()
   
@@ -56,11 +58,23 @@
 
 </script>
 
-<Model
-  position={[-1, 0, -1]}
-  rotation={[Math.PI/2, 0.2, 0]}
-  scale={5}
+<Cinnamonroll
+  position={[0, 0, -3]}
+  rotation={[0.5, 0, 0]}
+  scale={0.5}
 />
+
+<!-- <Sugar
+  position={[0, 0, -5]}
+  rotation={[0, 0, 0]}
+  scale={0.5}
+/> -->
+
+<!-- <Flour
+  position={[0, 0, -5]}
+  rotation={[0, 0, 0]}
+  scale={0.5}
+/> -->
 
 <T.DirectionalLight
   args={[0xfff0dd, 1]}
