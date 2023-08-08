@@ -3,13 +3,14 @@
     T, 
     extend, 
     useRender,
-    useThrelte 
+    useThrelte,
+    useFrame
   } from '@threlte/core'
   
   import { 
     OrbitControls, 
-    useTexture, 
-    Environment 
+    Environment,
+    Text
   } from '@threlte/extras'
   
   import { 
@@ -21,15 +22,8 @@
     BloomEffect, 
     KernelSize 
   } from 'postprocessing'
-  
-  import { 
-    RoundedBoxGeometry 
-  } from 'three/addons/geometries/RoundedBoxGeometry.js'
-  extend({ RoundedBoxGeometry })
 
-  import Cinnamonroll from './models/Cinnamonroll.svelte'
-  import Flour from './models/Flour.svelte'
-  import Sugar from './models/Sugar.svelte'
+  import Object from './Object.svelte'
 
   const { scene, renderer, camera } = useThrelte()
   
@@ -58,23 +52,7 @@
 
 </script>
 
-<Cinnamonroll
-  position={[0, 0, -3]}
-  rotation={[0.5, 0, 0]}
-  scale={0.5}
-/>
-
-<!-- <Sugar
-  position={[0, 0, -5]}
-  rotation={[0, 0, 0]}
-  scale={0.5}
-/> -->
-
-<!-- <Flour
-  position={[0, 0, -5]}
-  rotation={[0, 0, 0]}
-  scale={0.5}
-/> -->
+<Object/>
 
 <T.DirectionalLight
   args={[0xfff0dd, 1]}
@@ -91,7 +69,6 @@
   position={[0, 0, 3]}
   on:create={({ ref }) => {
     ref.lookAt(0, 0, 0)
-  }}
->
+  }}>
   <OrbitControls/>
 </T.PerspectiveCamera>
